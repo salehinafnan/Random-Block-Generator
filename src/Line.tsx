@@ -1,4 +1,3 @@
-// src/Line.tsx
 import React, { FC } from "react";
 
 interface LineProps {

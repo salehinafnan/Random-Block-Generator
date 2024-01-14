@@ -1,4 +1,3 @@
-// src/Block.tsx
 import React, { useState, MouseEvent } from "react";
 
 interface BlockProps {
