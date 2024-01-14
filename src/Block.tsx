@@ -16,7 +16,6 @@ export const Block = ({
   onMoveBlock,
 }: BlockProps) => {
   const [isDragging, setIsDragging] = useState(false);
-  const [isResizing, setIsResizing] = useState(false);
   const [color, setColor] = useState("darkgrey");
   const [size, setSize] = useState({ width: 100, height: 100 });
 
@@ -27,7 +26,6 @@ export const Block = ({
       document.addEventListener("mousemove", handleMouseMove);
       document.addEventListener("mouseup", handleMouseUp);
     } else {
-      setIsResizing(true);
       document.addEventListener("mousemove", handleResize);
       document.addEventListener("mouseup", handleMouseUp);
     }
@@ -50,7 +48,6 @@ export const Block = ({
 
   const handleMouseUp = () => {
     setIsDragging(false);
-    setIsResizing(false);
     setColor("darkgrey");
     document.removeEventListener("mousemove", handleMouseMove);
     document.removeEventListener("mousemove", handleResize);
