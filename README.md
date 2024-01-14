@@ -22,4 +22,5 @@ Lines are drawn between a block and its parent block, showing the relationship b
 
 ### Scripts
 
+- `npm install`: Install all the ncessary packages
 - `npm run dev`: Start the development server
