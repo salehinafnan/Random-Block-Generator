@@ -1,6 +1,6 @@
 # Fringecore Frontend Challenge Block Graph Solution
 
-This project is a React application built with TypeScript and Vite. It's a solution for the Fringecore Frontend Challenge Block Graph.
+This is the submission for the Fringecore Frontend Challenge Block Graph.
 
 ## Features
 
@@ -20,13 +20,6 @@ Users can move blocks around the screen by dragging them. The lines connected to
 
 Lines are drawn between a block and its parent block, showing the relationship between blocks.
 
-## Development
-
-This project uses Vite for a fast and efficient development experience, and TypeScript for static typing.
-
 ### Scripts
 
 - `npm run dev`: Start the development server
-- `npm run build`: Build the project for production
-- `npm run lint`: Lint the project using ESLint
-- `npm run preview`: Preview the production build
