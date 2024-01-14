@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Block } from "./Block";
 import { Line } from "./Line";
 
