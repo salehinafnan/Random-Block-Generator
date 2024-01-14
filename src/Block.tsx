@@ -16,23 +16,40 @@ export const Block = ({
   onMoveBlock,
 }: BlockProps) => {
   const [isDragging, setIsDragging] = useState(false);
+  const [isResizing, setIsResizing] = useState(false);
   const [color, setColor] = useState("darkgrey");
+  const [size, setSize] = useState({ width: 100, height: 100 });
 
-  const handleMouseDown = () => {
-    setIsDragging(true);
-    setColor("red");
-    document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseup", handleMouseUp);
+  const handleMouseDown = (event: React.MouseEvent) => {
+    if (event.target === event.currentTarget) {
+      setIsDragging(true);
+      setColor("red");
+      document.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("mouseup", handleMouseUp);
+    } else {
+      setIsResizing(true);
+      document.addEventListener("mousemove", handleResize);
+      document.addEventListener("mouseup", handleMouseUp);
+    }
   };
 
-  const handleMouseMove = (event: MouseEvent<HTMLElement>) => {
+  const handleMouseMove = (event: MouseEvent) => {
     onMoveBlock(id, { x: event.clientX, y: event.clientY });
+  };
+
+  const handleResize = (event: MouseEvent) => {
+    setSize({
+      width: event.clientX - position.x,
+      height: event.clientY - position.y,
+    });
   };
 
   const handleMouseUp = () => {
     setIsDragging(false);
+    setIsResizing(false);
     setColor("darkgrey");
     document.removeEventListener("mousemove", handleMouseMove);
+    document.removeEventListener("mousemove", handleResize);
     document.removeEventListener("mouseup", handleMouseUp);
   };
 
@@ -48,10 +65,10 @@ export const Block = ({
     <div
       style={{
         position: "absolute",
-        top: position.y,
-        left: position.x,
-        width: "100px",
-        height: "100px",
+        left: `${position.x}px`,
+        top: `${position.y}px`,
+        width: `${size.width}px`,
+        height: `${size.height}px`,
         backgroundColor: color,
         color: "white",
         display: "flex",
@@ -66,8 +83,8 @@ export const Block = ({
       <div>{id}</div>
       <div
         style={{
-          width: "60px",
-          height: "30px",
+          width: "70%",
+          height: "40%",
           backgroundColor: "white",
           display: "flex",
           justifyContent: "center",
@@ -101,6 +118,17 @@ export const Block = ({
           -
         </button>
       </div>
+      <div
+        style={{
+          position: "absolute",
+          right: 0,
+          bottom: 0,
+          width: "10px",
+          height: "10px",
+          backgroundColor: "black",
+          cursor: "nwse-resize",
+        }}
+      />
     </div>
   );
 };
