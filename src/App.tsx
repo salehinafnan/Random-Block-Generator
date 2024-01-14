@@ -25,10 +25,8 @@ export const App = () => {
 
   const handleDeleteBlock = (id: string) => {
     const deleteRecursively = (id: string) => {
-      // Remove the block with the given id
       setBlocks((blocks) => blocks.filter((block) => block.id !== id));
 
-      // Find and remove all child blocks
       blocks
         .filter((block) => block.parentId === id)
         .forEach((childBlock) => deleteRecursively(childBlock.id));
