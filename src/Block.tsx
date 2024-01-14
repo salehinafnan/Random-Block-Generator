@@ -1,4 +1,4 @@
-import React, { useState, MouseEvent } from "react";
+import { useState } from "react";
 
 interface BlockProps {
   id: string;
@@ -18,14 +18,14 @@ export const Block = ({
   const [isDragging, setIsDragging] = useState(false);
   const [color, setColor] = useState("darkgrey");
 
-  const handleMouseDown = (event: MouseEvent) => {
+  const handleMouseDown = () => {
     setIsDragging(true);
     setColor("red");
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseup", handleMouseUp);
   };
 
-  const handleMouseMove = (event: MouseEvent) => {
+  const handleMouseMove = (event: MouseEvent<HTMLElement>) => {
     onMoveBlock(id, { x: event.clientX, y: event.clientY });
   };
 
