@@ -38,10 +38,14 @@ export const Block = ({
   };
 
   const handleResize = (event: MouseEvent) => {
-    setSize({
-      width: event.clientX - position.x,
-      height: event.clientY - position.y,
-    });
+    const newWidth = event.clientX - position.x;
+    const newHeight = event.clientY - position.y;
+    if (newWidth >= 100 && newHeight >= 100) {
+      setSize({
+        width: newWidth,
+        height: newHeight,
+      });
+    }
   };
 
   const handleMouseUp = () => {
