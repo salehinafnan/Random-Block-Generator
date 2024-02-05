@@ -1,4 +1,4 @@
-# Fringecore Frontend Challenge Block Graph Solution
+# Random Block Graph Generator
 
 This is the submission for the Fringecore Frontend Challenge Block Graph.
 
