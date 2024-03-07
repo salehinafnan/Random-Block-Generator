@@ -1,7 +1,5 @@
 # Random Block Graph Generator
 
-This is the submission for the Fringecore Frontend Challenge Block Graph.
-
 ## Features
 
 ### Block Creation
