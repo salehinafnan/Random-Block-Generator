@@ -1,4 +1,4 @@
-# Random Block Graph Generator
+Random Block Graph Generator
 ## Features
 
 ### Block Creation
@@ -17,7 +17,7 @@ Users can move blocks around the screen by dragging them. The lines connected to
 
 Lines are drawn between a block and its parent block, showing the relationship between blocks.
 
-### Scripts
+### Run Scripts
 
 - `npm install`: Install all the ncessary packages
 - `npm run dev`: Start the development server
