@@ -1,5 +1,4 @@
 # Random Block Graph Generator
-
 ## Features
 
 ### Block Creation
