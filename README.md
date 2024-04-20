@@ -1,4 +1,5 @@
 # Random Block Graph Generator
+
 ## Features
 
 ### Block Creation
@@ -19,5 +20,5 @@ Lines are drawn between a block and its parent block, showing the relationship b
 
 ### Run Scripts
 
-- `npm install`: Install all the ncessary packages
+- `npm install`: Install all the necessary packages
 - `npm run dev`: Start the development server
